@@ -1,0 +1,42 @@
+<%
+
+include("../model/recipeQuery.jag");
+response.contentType = 'text/javascript';
+
+var verb = request.getMethod();
+var recipeid = request.getParameter('recipeid');
+var recName = request.getParameter('recName');
+var ingred = request.getParameter('ingred');
+var direc = request.getParameter('direc');
+var log = new Log();
+
+
+var uri = request.getRequestURI();
+uri = uri.substring(request.getContextPath().length);
+if(uri != null) {
+var uriMatcher = new URIMatcher(uri);
+
+	if(uriMatcher.match("/recipes/{recipeid}/{page}")) {
+		recipeid = uriMatcher.elements().recipeid;
+	}
+	if(uriMatcher.match("/recipes/{recipeid}/")) {
+		recipeid = uriMatcher.elements().recipeid;
+	}
+}
+
+if(verb == "DELETE" && recipeid != null) {
+	deleteRecipe(recipeid);
+
+} else if(verb == "GET" && recipeid != null) {
+	viewRecipe(recipeid);
+
+} else if(verb == "POST" && recName != null) {
+	addRecipe(recName,ingred,direc);
+
+} else if(verb == "GET") {
+	listAllRecipes();
+}
+
+
+
+%>

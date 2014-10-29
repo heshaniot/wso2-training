@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1400228326479
+Build-Jdk: 1.7.0_51
+Built-By: root
+Bundle-ManifestVersion: 2
+Bundle-Name: WSO2 Carbon - Order Processor UI
+Bundle-SymbolicName: org.wso2.carbon.order.process.ui
+Bundle-Version: 4.2.0
+Carbon-Component: UIBundle
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.wso2.carbon.order.process.data.xsd;uses:="javax.xml.
+ namespace,javax.xml.stream,org.apache.axiom.om,org.apache.axis2.databin
+ ding";version="4.2.0",org.wso2.carbon.order.process.ui;uses:="javax.xml
+ .namespace,javax.xml.stream,org.apache.axiom.om,org.apache.axis2,org.ap
+ ache.axis2.client,org.apache.axis2.context,org.apache.axis2.databinding
+ ,org.apache.axis2.description,org.wso2.carbon.order.process.data.xsd";v
+ ersion="4.2.0",org.wso2.carbon.order.process.ui.i18n;version="4.2.0"
+Import-Package: javax.xml.namespace;resolution:=optional,javax.xml.strea
+ m;resolution:=optional;version="[1.0,2)",org.apache.axiom.om;resolution
+ :=optional,org.apache.axiom.soap;resolution:=optional,org.apache.axis2;
+ resolution:=optional;version="[1.6,2)",org.apache.axis2.addressing;reso
+ lution:=optional;version="[1.6,2)",org.apache.axis2.client;resolution:=
+ optional;version="[1.6,2)",org.apache.axis2.client.async;resolution:=op
+ tional;version="[1.6,2)",org.apache.axis2.context;resolution:=optional;
+ version="[1.6,2)",org.apache.axis2.databinding;resolution:=optional;ver
+ sion="[1.6,2)",org.apache.axis2.databinding.utils;resolution:=optional;
+ version="[1.6,2)",org.apache.axis2.databinding.utils.reader;resolution:
+ =optional;version="[1.6,2)",org.apache.axis2.description;resolution:=op
+ tional;version="[1.6,2)",org.apache.axis2.engine;resolution:=optional;v
+ ersion="[1.6,2)",org.apache.axis2.transport;resolution:=optional;versio
+ n="[1.6,2)",org.apache.axis2.util;resolution:=optional;version="[1.6,2)
+ "
+Tool: Bnd-2.1.0.20130426-122213

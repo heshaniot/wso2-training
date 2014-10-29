@@ -1,0 +1,68 @@
+
+
+<document>
+
+<script>
+	var recipe = {
+		id:0;
+		name:" ";
+		ingred:"";
+		direc:"";
+		};
+	var recipebook = [];
+	
+	{{#Recipes}}
+	recipe = new recipe();
+	recipe.id = {{RECIPE_ID}};
+	recipe.name = {{NAME}};
+	recipe.ingred = {{INGREDIENTS}};
+	recipe.direc={{DIRECTIONS}};
+	recipebook.push(recipe);
+	{{/Recipes}}
+
+
+	function viewrecipe(RECIPE_ID){
+		var id = RECIPE_ID-1;
+		getElementById("div-rec").getElementById("name").innerHTML = recipebook[id].name;
+		getElementById("div-rec").getElementById("ingred").innerHTML = recipebook[id].ingred;
+		getElementById("div-rec").getElementById("direc").innerHTML = recipebook[id].direc;
+		
+	}
+
+</script>
+
+<div id="div-rec">{{#Recipes}}
+	<div class="recipe-entry"> 
+		<div class="recipe-number">{{RECIPE_ID}}</div>
+		<div class="recipe-content">
+		{{NAME}} 
+			<span class="help-block"><a data-toggle="modal" href="#viewRecipe" id="{{RECIPE_ID}}" onclick="veiwrecipe({{RECIPE_ID}})"> View Recipe </a></span>
+		</div> 
+	<div class="modal hide fade" id="viewRecipe">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">
+				<b>x</b>
+			</button>
+			<h3 id="name"></h3>
+		</div>
+		<div class="modal-body">
+			<h4 >INGREDIENTS: <br></h4>
+			<p id="ingred"></p>
+			<h4>DIRECTIONS:<br></h4>
+			<p id="direc"><p>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" data-dismiss="modal">Cancel</a>
+		</div>
+	</div>
+
+     {{/Recipes}}
+     
+	</div>
+	
+</div>
+
+</document>
+
+
+		

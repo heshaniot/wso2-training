@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="issueManagementUrl">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="/home/heshani/Training/CarbonComponent/student-manager"/>
+			<item value="/home/heshani/Training/CarbonComponent/order-processor/order-processor-components/org.wso2.carbon.order.process"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="groupId">
+			<item value="org.wso2.carbon"/>
+		</list>
+		<list key="package">
+			<item value="org.org.wso2.carbon.order.process.ui"/>
+		</list>
+		<list key="artifactId">
+			<item value="org.wso2.carbon.order.process.ui"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="4.2.0"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="org.wso2.carbon.order.process.ui"/>
+			<item value="org.wso2.carbon.order.process"/>
+			<item value="order-processor-components"/>
+			<item value="student-manager-components"/>
+			<item value="org.wso2.carbon.student.mgt.stub"/>
+			<item value="org.wso2.carbon.student.mgt"/>
+			<item value="student-manager-repository"/>
+			<item value="student-manager-features"/>
+			<item value="org.wso2.carbon.order.process.stub"/>
+			<item value="order-processor-repository"/>
+			<item value="order-processor-features"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/home/heshani/Training/CarbonComponent/samples/student-manager"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="org.wso2.carbon"/>
+		</list>
+		<list key="name">
+			<item value="WSO2 Carbon - Order Processor UI"/>
+			<item value="WSO2 Carbon - Student Manager Server Component"/>
+			<item value="WSO2 Carbon - Order Processor Components"/>
+		</list>
+		<list key="artifactId">
+			<item value="org.wso2.carbon.order.process.ui"/>
+			<item value="order-processor-components"/>
+			<item value="org.wso2.carbon.order.process"/>
+			<item value="order-processor"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="4.2.0"/>
+		</list>
+	</section>
+</section>

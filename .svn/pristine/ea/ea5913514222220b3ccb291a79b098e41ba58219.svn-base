@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service name="OrderProcessingService" scope="application">
+    <description>
+        Sample Order Processing Service
+    </description>
+    <operation name="addOrder">
+        <messageReceiver class="org.apache.axis2.receivers.RawXMLINOnlyMessageReceiver"/>
+    </operation>
+    <operation name="getPrice">
+        <messageReceiver class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
+    </operation>
+    <operation name="getQuantity">
+        <messageReceiver class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
+    </operation>
+   <operation name="getOrders">
+        <messageReceiver class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
+    </operation>
+    <parameter name="ServiceClass">orderprocess.service.OrderProcessingService</parameter>
+</service>

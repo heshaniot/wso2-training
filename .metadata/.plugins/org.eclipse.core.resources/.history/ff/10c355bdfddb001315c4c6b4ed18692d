@@ -1,0 +1,6 @@
+package org.wso2.carbon.student.mgt.data;
+
+public class Student {
+	
+
+}

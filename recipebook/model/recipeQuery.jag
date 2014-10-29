@@ -1,0 +1,107 @@
+<%
+
+function addRecipe(recName,ingred,direc) {
+	if(session.get("count") == null) {
+		session.put("count", 0);
+	}
+	var recipeIdx = session.get("count");
+
+	var recipeO = session.get("recipes");
+	if(recipeO != null) {
+		//recipeIdx = reciperO.length;
+		var recipeCount = session.get("count");
+		recipeCount++;
+		session.put("count", recipeCount);
+		recipeIdx = recipeCount;
+	}
+
+	var recipename = recName;
+	var ingredients = ingred;
+	var directions = direc;
+
+	
+	//menuID.info(coffedata);
+
+	if(recipename != 0) {
+		var recipes;
+		if(recipeO != null) {
+			var recipeJson = session.get("recipes");
+			recipeJson.push(recipeIdx);
+			session.put("recipes", recipeJson);
+		} else {
+			session.put("recipes", [0]);
+		}
+		var object = {
+			"RECIPE_ID" : recipeIdx+1,
+			"NAME" : recipename,
+			"INGREDIENTS" : ingred,
+			"DIRECTIONS" : directions
+		};
+		session.put("o" + recipeIdx, object);
+		//recipe is been taken
+		var result = session.get("o" + recipeIdx);
+		print(result);
+	} 
+}
+
+function listAllRecipes() {
+	var recipeO = session.get("recipes");
+	var listRecipe = [];
+	if(recipeO != null) {
+		var recipe
+		for(var key in recipeO) {
+			recipe = session.get("o" + recipeO[key]);
+			listRecipe.push(recipe);
+		}
+		print({
+			"Recipes" : listRecipe
+		});
+	} else {
+
+		print({
+			"Infor" : "Sorry, Recipes does not exist"
+		});
+	}
+}
+
+
+
+function viewRecipe(recipeid) {
+	var recipe = session.get("o" + recipeid);
+	if(recipe != null) {
+		print(recipe);
+	} else {
+
+		print({
+			"Infor" : "Sorry, Recipe not exsit"
+		});
+	}
+
+}
+
+function deleteRecipe(recipeid) {
+	//db processing
+	var recipe = session.get("o" + recipeid);
+	var recipeO = session.get("recipes");
+
+	//checking Recipe is there
+	if(recipe != null && recipeO != null) {
+		session.remove("o" + recipeid);
+		for(var key in recipeO) {
+			if(recipeO[key] == recipeid) {
+				recipeO.splice(key, 1);
+				session.put("recipes", recipeO);
+			}
+		}
+		print({
+			"Infor" : "Recipe id " + recipeid + " is removed"
+		});
+	} else {
+		print({
+			"Infor" : "Sorry, Recipe id " + recipeid + " is not exist to remove"
+		});
+	}
+
+}
+
+%>

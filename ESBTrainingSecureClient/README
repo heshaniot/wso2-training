@@ -1,0 +1,19 @@
+
+
+----generating service-----
+
+1.run "ant generate.service" in the base directory
+2.copy the "OrderProcessingService.aar" file from build directory to the CARBON_HOME/samples/axis2Server/repository/services directory
+3.Start the sample axis2 server
+
+
+
+----securing service-------
+1.start the ESB
+2.copy the content in resources/SecureOrderProxy.xml file to the configuration file of ESB (Source view)
+
+
+
+
+-----running secure client -----
+run "ant run.secureClient" in the base directory of the project  

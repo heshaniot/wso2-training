@@ -1,0 +1,272 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://service.orderprocess" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://service.orderprocess">
+<wsdl:documentation>OrderProcessingService</wsdl:documentation>
+<wsdl:types>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.orderprocess">
+<xs:element name="OrderProcessingServiceXMLStreamException">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="XMLStreamException" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="addOrder">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="addOrder" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getQuantity">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="getQuantity" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getQuantityResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getPrice">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="getPrice" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getPriceResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getOrders">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="getOrders" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getOrdersResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="addOrderRequest">
+<wsdl:part name="parameters" element="ns:addOrder"/>
+</wsdl:message>
+<wsdl:message name="addOrderResponse"/>
+<wsdl:message name="OrderProcessingServiceXMLStreamException">
+<wsdl:part name="parameters" element="ns:OrderProcessingServiceXMLStreamException"/>
+</wsdl:message>
+<wsdl:message name="getQuantityRequest">
+<wsdl:part name="parameters" element="ns:getQuantity"/>
+</wsdl:message>
+<wsdl:message name="getQuantityResponse">
+<wsdl:part name="parameters" element="ns:getQuantityResponse"/>
+</wsdl:message>
+<wsdl:message name="getOrdersRequest">
+<wsdl:part name="parameters" element="ns:getOrders"/>
+</wsdl:message>
+<wsdl:message name="getOrdersResponse">
+<wsdl:part name="parameters" element="ns:getOrdersResponse"/>
+</wsdl:message>
+<wsdl:message name="getPriceRequest">
+<wsdl:part name="parameters" element="ns:getPrice"/>
+</wsdl:message>
+<wsdl:message name="getPriceResponse">
+<wsdl:part name="parameters" element="ns:getPriceResponse"/>
+</wsdl:message>
+<wsdl:portType name="OrderProcessingServicePortType">
+<wsdl:operation name="addOrder">
+<wsdl:input message="ns:addOrderRequest" wsaw:Action="urn:addOrder"/>
+<wsdl:output message="ns:addOrderResponse" wsaw:Action="urn:addOrderResponse"/>
+<wsdl:fault message="ns:OrderProcessingServiceXMLStreamException" name="OrderProcessingServiceXMLStreamException" wsaw:Action="urn:addOrderOrderProcessingServiceXMLStreamException"/>
+</wsdl:operation>
+<wsdl:operation name="getQuantity">
+<wsdl:input message="ns:getQuantityRequest" wsaw:Action="urn:getQuantity"/>
+<wsdl:output message="ns:getQuantityResponse" wsaw:Action="urn:getQuantityResponse"/>
+<wsdl:fault message="ns:OrderProcessingServiceXMLStreamException" name="OrderProcessingServiceXMLStreamException" wsaw:Action="urn:getQuantityOrderProcessingServiceXMLStreamException"/>
+</wsdl:operation>
+<wsdl:operation name="getOrders">
+<wsdl:input message="ns:getOrdersRequest" wsaw:Action="urn:getOrders"/>
+<wsdl:output message="ns:getOrdersResponse" wsaw:Action="urn:getOrdersResponse"/>
+<wsdl:fault message="ns:OrderProcessingServiceXMLStreamException" name="OrderProcessingServiceXMLStreamException" wsaw:Action="urn:getOrdersOrderProcessingServiceXMLStreamException"/>
+</wsdl:operation>
+<wsdl:operation name="getPrice">
+<wsdl:input message="ns:getPriceRequest" wsaw:Action="urn:getPrice"/>
+<wsdl:output message="ns:getPriceResponse" wsaw:Action="urn:getPriceResponse"/>
+<wsdl:fault message="ns:OrderProcessingServiceXMLStreamException" name="OrderProcessingServiceXMLStreamException" wsaw:Action="urn:getPriceOrderProcessingServiceXMLStreamException"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="OrderProcessingServiceSoap11Binding" type="ns:OrderProcessingServicePortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="addOrder">
+<soap:operation soapAction="urn:addOrder" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getQuantity">
+<soap:operation soapAction="urn:getQuantity" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getOrders">
+<soap:operation soapAction="urn:getOrders" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getPrice">
+<soap:operation soapAction="urn:getPrice" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="OrderProcessingServiceSoap12Binding" type="ns:OrderProcessingServicePortType">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="addOrder">
+<soap12:operation soapAction="urn:addOrder" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap12:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getQuantity">
+<soap12:operation soapAction="urn:getQuantity" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap12:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getOrders">
+<soap12:operation soapAction="urn:getOrders" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap12:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getPrice">
+<soap12:operation soapAction="urn:getPrice" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="OrderProcessingServiceXMLStreamException">
+<soap12:fault use="literal" name="OrderProcessingServiceXMLStreamException"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="OrderProcessingServiceHttpBinding" type="ns:OrderProcessingServicePortType">
+<http:binding verb="POST"/>
+<wsdl:operation name="addOrder">
+<http:operation location="addOrder"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getQuantity">
+<http:operation location="getQuantity"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getOrders">
+<http:operation location="getOrders"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getPrice">
+<http:operation location="getPrice"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="OrderProcessingService">
+<wsdl:port name="OrderProcessingServiceHttpSoap11Endpoint" binding="ns:OrderProcessingServiceSoap11Binding">
+<soap:address location="http://10.100.5.111:9000/services/OrderProcessingService.OrderProcessingServiceHttpSoap11Endpoint"/>
+</wsdl:port>
+<wsdl:port name="OrderProcessingServiceHttpsSoap11Endpoint" binding="ns:OrderProcessingServiceSoap11Binding">
+<soap:address location="https://10.100.5.111:9002/services/OrderProcessingService.OrderProcessingServiceHttpsSoap11Endpoint"/>
+</wsdl:port>
+<wsdl:port name="OrderProcessingServiceHttpSoap12Endpoint" binding="ns:OrderProcessingServiceSoap12Binding">
+<soap12:address location="http://10.100.5.111:9000/services/OrderProcessingService.OrderProcessingServiceHttpSoap12Endpoint"/>
+</wsdl:port>
+<wsdl:port name="OrderProcessingServiceHttpsSoap12Endpoint" binding="ns:OrderProcessingServiceSoap12Binding">
+<soap12:address location="https://10.100.5.111:9002/services/OrderProcessingService.OrderProcessingServiceHttpsSoap12Endpoint"/>
+</wsdl:port>
+<wsdl:port name="OrderProcessingServiceHttpsEndpoint" binding="ns:OrderProcessingServiceHttpBinding">
+<http:address location="https://10.100.5.111:9002/services/OrderProcessingService.OrderProcessingServiceHttpsEndpoint"/>
+</wsdl:port>
+<wsdl:port name="OrderProcessingServiceHttpEndpoint" binding="ns:OrderProcessingServiceHttpBinding">
+<http:address location="http://10.100.5.111:9000/services/OrderProcessingService.OrderProcessingServiceHttpEndpoint"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
